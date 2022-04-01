@@ -3,7 +3,7 @@ const LZString = 'var LZString=function(){function o(o,r){if(!t[o]){t[o]={};for(
 
 const URL = require('./baseurl');
 const baseURL = URL.baseURL;
-const Image_baseURL = URL.Search_baseURL;
+const Image_baseURL = URL.Image_baseURL;
 
 /**
  * @property {String}key need override the key for caching
