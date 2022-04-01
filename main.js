@@ -1,3 +1,6 @@
+const URL = require('./baseurl');
+const baseURL = URL.baseURL;
+
 class MainController extends Controller {
 
     load(data) {
@@ -157,6 +160,9 @@ class MainController extends Controller {
                     subtitle: item_a[2].textContent,
                     link: item_a[0].getAttribute('href'),
                     picture: comic_items[index].querySelector('img').getAttribute('src'),
+                    pictureHeaders: {
+                        Referer: baseURL
+                    },
                 });
             }
         }
@@ -174,6 +180,9 @@ class MainController extends Controller {
             item.picture = box.querySelector('img').getAttribute('src');
             item.title = item_info[1].textContent;
             item.subtitle = box.querySelector('.list-inline').querySelector('a').textContent;
+            item.pictureHeaders = {
+                Referer: baseURL
+            };
             results.push(item);
         }
         return results;

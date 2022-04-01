@@ -1,4 +1,6 @@
-const Search_baseURL = 'https://www.maofly.com/search.html?q={0}&page={1}';
+const URL = require('./baseurl');
+const baseURL = URL.baseURL;
+const Search_baseURL = URL.Search_baseURL;
 
 class SearchController extends Controller {
 
@@ -148,6 +150,9 @@ class SearchController extends Controller {
                 subtitle: node.querySelector('.comic-author').querySelector('a').textContent,
                 link: node.querySelector('a').getAttribute('href'),
                 picture: node.querySelector('img').getAttribute('src'),
+                pictureHeaders: {
+                    Referer: baseURL
+                },
             });
         }
         return items;

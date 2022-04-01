@@ -1,4 +1,5 @@
-const baseURL = 'https://www.maofly.com';
+const URL = require('./baseurl');
+const baseURL = URL.baseURL;
 
 class IndexController extends Controller {
     load() {
